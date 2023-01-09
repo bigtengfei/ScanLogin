@@ -4,3 +4,7 @@
 **/.gradle
 gradlew
 gradlew.bat
+
+# web前端 提交过滤
+**/node_modules
+package-lock.json
