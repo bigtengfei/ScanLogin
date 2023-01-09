@@ -10,24 +10,24 @@ module.exports = {
   // 是否开启eslint校验
   lintOnSave: false,
   // webpack-dev-server 相关配置(代理设置)
-  devServer: {
-    port: process.env.VUE_APP_ACCESS_PORT,
-    // 局域网内ip:prot访问
-    host: '0.0.0.0',
-    open: false,
-    proxy: {
-      [process.env.VUE_APP_BASE_API]: {
-        target: 'http://127.0.0.1:8888',
-        changeOrigin: true,
-        pathRewrite: {
-          ['^' + process.env.VUE_APP_BASE_API]: ''
-        }
-      }
-    },
-    // 已弃用，更改为以下方式
-    // disableHostCheck: true
-    historyApiFallback: true,
-    allowedHosts: "all",
-  }
+  // devServer: {
+  //   port: process.env.VUE_APP_ACCESS_PORT,
+  //   // 局域网内ip:prot访问
+  //   host: '0.0.0.0',
+  //   open: false,
+  //   proxy: {
+  //     [process.env.VUE_APP_BASE_API]: {
+  //       target: 'http://47.100.255.143:9999',
+  //       changeOrigin: true,
+  //       pathRewrite: {
+  //         ['^' + process.env.VUE_APP_BASE_API]: ''
+  //       }
+  //     }
+  //   },
+  //   // 已弃用，更改为以下方式
+  //   // disableHostCheck: true
+  //   historyApiFallback: true,
+  //   allowedHosts: "all",
+  // }
 
 }
