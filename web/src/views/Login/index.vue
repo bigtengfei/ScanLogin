@@ -11,8 +11,13 @@
           ></el-image>
         </el-tab-pane>
         <el-tab-pane label="扫码确认登录" name="second">
-          <el-image style="width: 200px; height: 200px;" :src="imgUrl2" :fit="fit"></el-image>
-          <div id="confirm_shade"></div>
+          <div class="confirm_qr_code">
+            <el-image class="qr_code_2" :src="imgUrl2" :fit="fit"></el-image>
+            <div class="confirm_shade">
+              <el-image class="imgYes" :src="imgYes" :fit="fit"></el-image>
+              <p>扫码成功<br/>请在手机上确认</p>
+            </div>
+          </div>
         </el-tab-pane>
       </el-tabs>
     </div>
@@ -26,7 +31,8 @@ export default {
     return {
       activeName: "first",
       imgUrl1: require("@/assets/qr_code_1.png"),
-      imgUrl2: require("@/assets/qr_code_2.png")
+      imgUrl2: require("@/assets/qr_code_2.png"),
+      imgYes: require("@/assets/yes.png")
     };
   }
 };
@@ -64,13 +70,41 @@ p.title {
   margin: 0 auto;
 }
 
-#confirm_shade {
+.confirm_qr_code {
   position: relative;
-  display: inline-block;
-  overflow: hidden;
   width: 200px;
   height: 200px;
+  display: inline-block;
+}
+
+.qr_code_2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
   border-radius: 10px;
-  background: #fff;
+}
+
+.confirm_shade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+}
+.confirm_shade p{
+  font-size: 14px;
+  margin-top: 45px;
+  flood-color: gray;
+}
+
+.imgYes{
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  top: 30px;
 }
 </style>
